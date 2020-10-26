@@ -1,0 +1,52 @@
+:root {
+  --light: #f8f8f8;
+  --dark: #313131;
+  --grey: #888;
+  --primary: #ffce00;
+  --secondary: #fe4880;
+  --alert: #ff1e2d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: montserrat, sans-serif;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+body {
+  background-color: var(--light);
+}
+
+.App {
+  padding: 30px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+h1 {
+  color: var(--grey);
+  font-size: 32px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.total-income {
+  color: var(--grey);
+  font-size: 28px;
+  font-weight: 900;
+  background-color: #dfdfdf;
+  padding: 5px 25px;
+  border-radius: 8px;
+}
