@@ -36,3 +36,7 @@ Coming Soon!
 ## 📝 Todos
 
 - Finnish Tutorial
+- Suggest the time of day
+- Edit the time of day of the stock
+- Suggest the Stock Symbol
+- Suggest the strategy Symbol
