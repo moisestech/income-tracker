@@ -1,44 +1,67 @@
-import './form.css';
-import PropTypes from 'prop-types';
-import { useRef } from 'react';
+import "./form.css";
+import PropTypes from "prop-types";
+import { useRef } from "react";
 
-export default function Form({ income, setIncome}) {
+export default function Form({ income, setIncome }) {
   const desc = useRef(null);
   const date = useRef(null);
-  const price = useRef(null)
+  const price = useRef(null);
 
-  function addIncome(e) {
+  const AddIncome = (e) => {
     e.preventDefault();
-
-    console.log("Add Income!!!");
 
     let d = date.current.value.split("-");
     let newD = new Date(d[0], d[1] - 1, d[2]);
-    
-    setIncome([...income, {
-      "desc": desc.current.value,
-      "price": price.current.value,
-      "date": newD.getTime()
-    }]);
+
+    setIncome([
+      ...income,
+      {
+        desc: desc.current.value,
+        price: price.current.value,
+        date: newD.getTime(),
+      },
+    ]);
 
     desc.current.value = "";
     price.current.value = null;
     date.current.value = null;
-  }
+  };
+
+  console.log("Form:>> ", desc);
 
   return (
-    <form className="income-form" onSubmit={(e) => addIncome(e)}>
+    <form className="income-form" onSubmit={AddIncome}>
       <div className="form-inner">
-        <input type="text" name="desc" id="desc" placeholder="Income Description..." autoComplete = "off" type="text" ref={desc} /> 
-        <input type="number" name="price" id="price" placeholder="Price..." ref={price}/>
-        <input type="date" name="date" id="date" placeholder="Income date..." ref={date} />
+        <input
+          type="text"
+          name="desc"
+          id="desc"
+          placeholder="Income Description..."
+          autoComplete="off"
+          type="text"
+          ref={desc}
+        />
+        <input
+          type="number"
+          name="price"
+          id="price"
+          placeholder="Price..."
+          ref={price}
+        />
+        <input
+          type="date"
+          name="date"
+          id="date"
+          placeholder="Income date..."
+          ref={date}
+        />
         <input type="submit" value="Add Income" />
       </div>
     </form>
-  )
+  );
 }
 
 Form.propTypes = {
   income: PropTypes.array.isRequired,
-  setIncome: PropTypes.func.isRequired
-}
+  setIncome: PropTypes.func.isRequired,
+};
