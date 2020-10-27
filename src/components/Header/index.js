@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-export default function Header({totalIncome}) {
+export default function Header({ totalIncome }) {
   return (
     <header>
       <h1>Income Tracker</h1>
@@ -10,5 +10,5 @@ export default function Header({totalIncome}) {
 }
 
 Header.propTypes = {
-  totalIncome: PropTypes.number.isRequired
-}
+  totalIncome: PropTypes.number.isRequired,
+};
