@@ -69,3 +69,9 @@
   background-position: 100%;
   color: #fff;
 }
+
+@media only screen and (max-width: 900px) {
+  .form-inner {
+    flex-direction: column;
+  }
+}
